@@ -14,7 +14,7 @@ namespace ConsoleApp1.DESC
          *    舉例今天使用 [ 0123456789 ] 10碼進行加密，
          *    實際上在演算中只會取出 [ 01234567 ]進行加密，
          *    故PHP、JSP使用DES加密時可以直接加密，
-         *    但C#較嚴謹，超過8碼會報錯，所以預防安全可以加入SubString。。
+         *    但C#較嚴謹，超過8碼會報錯，所以預防安全可以加入SubString。
          */
         public static readonly string DesKey = "1234567A"; //必須為 8 個 ASCII 字元
         public static readonly string DesIv = "A7654321"; //必須為 8 個 ASCII 字元
