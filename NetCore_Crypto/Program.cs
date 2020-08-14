@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Crypto.Controller;
+using System;
 
 namespace Crypto
 {
@@ -6,6 +7,8 @@ namespace Crypto
     {
         static void Main(string[] args)
         {
+            Des des = new Des();
+            des.Display("Test Message.");
             Console.WriteLine("Hello World!");
         }
     }
