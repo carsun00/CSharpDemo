@@ -1,28 +1,26 @@
-﻿using ConsoleApp1.DESC;
-using Crypto.Interface;
+﻿using Crypto.Interface;
+using Crypto.TripleDESC;
 using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace Crypto.Controller
 {
-    class Des : ICrypto
+    class TripleDes : ICrypto
     {
+        public static readonly string DesKey = "1234567AAAAAA";
         public void Display(string msg)
         {
             Console.WriteLine("加解密的訊息：" + msg);
 
             //  加密
             string OriginalMsg = string.Empty;
-            DesEnCrypto desEn = new DesEnCrypto(CipherMode.ECB);
-            OriginalMsg = desEn.Encrypto(msg);
+            TripleDesEnCrypto desEn = new TripleDesEnCrypto();
+            OriginalMsg = desEn.DesEncrypt(msg, DesKey);
             Console.WriteLine(OriginalMsg);
 
             //  解密
             string decrypt = string.Empty;
-            DesDeCrypto desDe = new DesDeCrypto(CipherMode.ECB);
-            decrypt = desDe.Encrypto(OriginalMsg);
+            TripleDesDeCrypto desDe = new TripleDesDeCrypto();
+            decrypt = desDe.DesDecrypt(OriginalMsg, DesKey);
             Console.WriteLine(decrypt);
         }
     }

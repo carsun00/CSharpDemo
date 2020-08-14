@@ -7,8 +7,15 @@ namespace Crypto
     {
         static void Main(string[] args)
         {
+            string Msg = "Test Message.";
+            Console.WriteLine("Des");
             Des des = new Des();
-            des.Display("Test Message.");
+            des.Display(Msg);
+
+            Console.WriteLine("\nTripleDes");
+            TripleDes tripleDes = new TripleDes();
+            tripleDes.Display(Msg);
+
             Console.WriteLine("Hello World!");
         }
     }
