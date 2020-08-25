@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface_Oriented", "Interface_Oriented.csproj", "{216FF1D2-2FDC-4518-8B30-A3DB3CE5B0D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interface_Oriented", "Interface_Oriented.csproj", "{216FF1D2-2FDC-4518-8B30-A3DB3CE5B0D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "..\Demo\Demo.csproj", "{8434D175-930C-4DFC-A2E1-6CC59F1463FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{216FF1D2-2FDC-4518-8B30-A3DB3CE5B0D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{216FF1D2-2FDC-4518-8B30-A3DB3CE5B0D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{216FF1D2-2FDC-4518-8B30-A3DB3CE5B0D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8434D175-930C-4DFC-A2E1-6CC59F1463FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8434D175-930C-4DFC-A2E1-6CC59F1463FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8434D175-930C-4DFC-A2E1-6CC59F1463FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8434D175-930C-4DFC-A2E1-6CC59F1463FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

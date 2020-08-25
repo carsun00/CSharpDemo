@@ -1,7 +1,5 @@
 ﻿using Interface_Oriented.ModelAuthentication.Interface;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Interface_Oriented.ModelAuthentication.Entity
 {
