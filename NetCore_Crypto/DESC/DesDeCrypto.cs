@@ -28,8 +28,6 @@ namespace ConsoleApp1.DESC
             DES.Mode = mode;
         }
 
-
-
         /// <summary>
         ///     解密訊息
         /// </summary>
