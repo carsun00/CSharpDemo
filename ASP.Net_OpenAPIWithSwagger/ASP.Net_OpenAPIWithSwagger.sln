@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.Net_OpenAPIWithSwagger", "ASP.Net_OpenAPIWithSwagger\ASP.Net_OpenAPIWithSwagger.csproj", "{05C5B466-293B-4586-BC66-828ECB183E55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAPIClineDemo", "OpenAPIClineDemo\OpenAPIClineDemo.csproj", "{253A52CF-4428-4548-8A84-18A4C7BC4590}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05C5B466-293B-4586-BC66-828ECB183E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C5B466-293B-4586-BC66-828ECB183E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C5B466-293B-4586-BC66-828ECB183E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C5B466-293B-4586-BC66-828ECB183E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{253A52CF-4428-4548-8A84-18A4C7BC4590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{253A52CF-4428-4548-8A84-18A4C7BC4590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{253A52CF-4428-4548-8A84-18A4C7BC4590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{253A52CF-4428-4548-8A84-18A4C7BC4590}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F199F34-E20D-4A20-9E34-60D8805704A4}
+	EndGlobalSection
+EndGlobal

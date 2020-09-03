@@ -1,0 +1,4382 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "AgentBackstage API",
+    "description": "代理商後台的 API 說明文檔",
+    "contact": {
+      "name": "AgentBackstage API v1",
+      "email": "SmartDog.Chang@gmail.com"
+    },
+    "version": "Beta1"
+  },
+  "paths": {
+    "/api/Agent": {
+      "get": {
+        "tags": [
+          "Agent"
+        ],
+        "summary": "取得自已帳號與所有子帳號",
+        "operationId": "Agent",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Agent"
+        ],
+        "summary": "新增帳號",
+        "description": "<ul>\r\n  <li style=\"color:red;\">☆ 注意！這邊 sample 的是假的資料，請自行代換</li>\r\n  <li>若新增的為子帳號，不可大於父帳號的權限</li>\r\n  <li>另無法新增種子帳號</li>\r\n</ul>",
+        "operationId": "Agent2",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent_PostRequest"
+              },
+              "example": {
+                "id": "07b9bf62-d402-425d-b684-e4a8754c804a",
+                "account": "dealerTestAccount",
+                "password": "abc123",
+                "name": "abc123測試名稱",
+                "status": true,
+                "email": "test@test.com.tw",
+                "parentId": "2e1c9cc7-1da3-4495-b7e9-3c9a8cfab1b1",
+                "authMapId": [
+                  "27096465-90cd-4799-b937-a2b6426a797b",
+                  "2af14f1f-f5e4-401f-80f2-e41c8f401220",
+                  "c5f75a05-e44e-4632-97e8-e6143a7fc786"
+                ],
+                "organization": {
+                  "id": "cf7861c7-556f-499a-890c-f9c7c4190266"
+                },
+                "systemCode": [
+                  "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+                ],
+                "webId": [
+                  "01070a33-7bcc-4d3c-9bad-5f902b0883e1"
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent_PostRequest"
+              },
+              "example": {
+                "id": "07b9bf62-d402-425d-b684-e4a8754c804a",
+                "account": "dealerTestAccount",
+                "password": "abc123",
+                "name": "abc123測試名稱",
+                "status": true,
+                "email": "test@test.com.tw",
+                "parentId": "2e1c9cc7-1da3-4495-b7e9-3c9a8cfab1b1",
+                "authMapId": [
+                  "27096465-90cd-4799-b937-a2b6426a797b",
+                  "2af14f1f-f5e4-401f-80f2-e41c8f401220",
+                  "c5f75a05-e44e-4632-97e8-e6143a7fc786"
+                ],
+                "organization": {
+                  "id": "cf7861c7-556f-499a-890c-f9c7c4190266"
+                },
+                "systemCode": [
+                  "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+                ],
+                "webId": [
+                  "01070a33-7bcc-4d3c-9bad-5f902b0883e1"
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent_PostRequest"
+              },
+              "example": {
+                "id": "07b9bf62-d402-425d-b684-e4a8754c804a",
+                "account": "dealerTestAccount",
+                "password": "abc123",
+                "name": "abc123測試名稱",
+                "status": true,
+                "email": "test@test.com.tw",
+                "parentId": "2e1c9cc7-1da3-4495-b7e9-3c9a8cfab1b1",
+                "authMapId": [
+                  "27096465-90cd-4799-b937-a2b6426a797b",
+                  "2af14f1f-f5e4-401f-80f2-e41c8f401220",
+                  "c5f75a05-e44e-4632-97e8-e6143a7fc786"
+                ],
+                "organization": {
+                  "id": "cf7861c7-556f-499a-890c-f9c7c4190266"
+                },
+                "systemCode": [
+                  "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+                ],
+                "webId": [
+                  "01070a33-7bcc-4d3c-9bad-5f902b0883e1"
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent_PostRequest"
+              },
+              "example": {
+                "id": "07b9bf62-d402-425d-b684-e4a8754c804a",
+                "account": "dealerTestAccount",
+                "password": "abc123",
+                "name": "abc123測試名稱",
+                "status": true,
+                "email": "test@test.com.tw",
+                "parentId": "2e1c9cc7-1da3-4495-b7e9-3c9a8cfab1b1",
+                "authMapId": [
+                  "27096465-90cd-4799-b937-a2b6426a797b",
+                  "2af14f1f-f5e4-401f-80f2-e41c8f401220",
+                  "c5f75a05-e44e-4632-97e8-e6143a7fc786"
+                ],
+                "organization": {
+                  "id": "cf7861c7-556f-499a-890c-f9c7c4190266"
+                },
+                "systemCode": [
+                  "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+                ],
+                "webId": [
+                  "01070a33-7bcc-4d3c-9bad-5f902b0883e1"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Agent"
+        ],
+        "summary": "更新帳號",
+        "description": "<ul>\r\n  <li style=\"color:red;\">☆ 注意！這邊 sample 的是假的資料，請自行代換</li>\r\n  <li>若編輯的為子帳號，不可大於父帳號的權限</li>\r\n  <li>另種子帳號無法更新自己</li>\r\n</ul>",
+        "operationId": "Agent3",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent_PutRequest"
+              },
+              "example": {
+                "id": "07b9bf62-d402-425d-b684-e4a8754c804a",
+                "account": "dealerTestAccount",
+                "password": "abc123",
+                "name": "abc123測試名稱",
+                "status": true,
+                "email": "test@test.com.tw",
+                "parentId": "2e1c9cc7-1da3-4495-b7e9-3c9a8cfab1b1",
+                "authMapId": [
+                  "fe728353-b388-44c8-aaed-92b0063188d8",
+                  "4af8919c-6786-435a-971b-d1c43cb73b6f",
+                  "5b97c118-e040-468d-b278-c86698202390"
+                ],
+                "organization": {
+                  "id": "cf7861c7-556f-499a-890c-f9c7c4190266"
+                },
+                "systemCode": [
+                  "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+                ],
+                "webId": [
+                  "01070a33-7bcc-4d3c-9bad-5f902b0883e1"
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent_PutRequest"
+              },
+              "example": {
+                "id": "07b9bf62-d402-425d-b684-e4a8754c804a",
+                "account": "dealerTestAccount",
+                "password": "abc123",
+                "name": "abc123測試名稱",
+                "status": true,
+                "email": "test@test.com.tw",
+                "parentId": "2e1c9cc7-1da3-4495-b7e9-3c9a8cfab1b1",
+                "authMapId": [
+                  "fe728353-b388-44c8-aaed-92b0063188d8",
+                  "4af8919c-6786-435a-971b-d1c43cb73b6f",
+                  "5b97c118-e040-468d-b278-c86698202390"
+                ],
+                "organization": {
+                  "id": "cf7861c7-556f-499a-890c-f9c7c4190266"
+                },
+                "systemCode": [
+                  "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+                ],
+                "webId": [
+                  "01070a33-7bcc-4d3c-9bad-5f902b0883e1"
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent_PutRequest"
+              },
+              "example": {
+                "id": "07b9bf62-d402-425d-b684-e4a8754c804a",
+                "account": "dealerTestAccount",
+                "password": "abc123",
+                "name": "abc123測試名稱",
+                "status": true,
+                "email": "test@test.com.tw",
+                "parentId": "2e1c9cc7-1da3-4495-b7e9-3c9a8cfab1b1",
+                "authMapId": [
+                  "fe728353-b388-44c8-aaed-92b0063188d8",
+                  "4af8919c-6786-435a-971b-d1c43cb73b6f",
+                  "5b97c118-e040-468d-b278-c86698202390"
+                ],
+                "organization": {
+                  "id": "cf7861c7-556f-499a-890c-f9c7c4190266"
+                },
+                "systemCode": [
+                  "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+                ],
+                "webId": [
+                  "01070a33-7bcc-4d3c-9bad-5f902b0883e1"
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent_PutRequest"
+              },
+              "example": {
+                "id": "07b9bf62-d402-425d-b684-e4a8754c804a",
+                "account": "dealerTestAccount",
+                "password": "abc123",
+                "name": "abc123測試名稱",
+                "status": true,
+                "email": "test@test.com.tw",
+                "parentId": "2e1c9cc7-1da3-4495-b7e9-3c9a8cfab1b1",
+                "authMapId": [
+                  "fe728353-b388-44c8-aaed-92b0063188d8",
+                  "4af8919c-6786-435a-971b-d1c43cb73b6f",
+                  "5b97c118-e040-468d-b278-c86698202390"
+                ],
+                "organization": {
+                  "id": "cf7861c7-556f-499a-890c-f9c7c4190266"
+                },
+                "systemCode": [
+                  "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+                ],
+                "webId": [
+                  "01070a33-7bcc-4d3c-9bad-5f902b0883e1"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Agent/{id}": {
+      "delete": {
+        "tags": [
+          "Agent"
+        ],
+        "summary": "刪除帳號\r\n需注意種子帳號無法刪除自己",
+        "operationId": "Agent4",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "",
+            "schema": {
+              "type": "string",
+              "description": "",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Auth": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "登入 \r\n除了 Admin 以外，測試的假資料還有 H1N0Root, H1N0Sys, H1N0Web",
+        "operationId": "Auth",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auth_PostRequest"
+              },
+              "example": {
+                "u": "H1N0Root",
+                "p": "H1N0Root",
+                "c": null
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auth_PostRequest"
+              },
+              "example": {
+                "u": "H1N0Root",
+                "p": "H1N0Root",
+                "c": null
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auth_PostRequest"
+              },
+              "example": {
+                "u": "H1N0Root",
+                "p": "H1N0Root",
+                "c": null
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auth_PostRequest"
+              },
+              "example": {
+                "u": "H1N0Root",
+                "p": "H1N0Root",
+                "c": null
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Data = 系統 Token",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseBaseModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseBaseModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseBaseModel"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "登出",
+        "operationId": "Auth2",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseBaseModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseBaseModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseBaseModel"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "修改密碼",
+        "operationId": "Auth3",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auth_PutRequest"
+              },
+              "example": {
+                "oPwd": "AgentAdmin",
+                "nPwd": "Admin"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auth_PutRequest"
+              },
+              "example": {
+                "oPwd": "AgentAdmin",
+                "nPwd": "Admin"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auth_PutRequest"
+              },
+              "example": {
+                "oPwd": "AgentAdmin",
+                "nPwd": "Admin"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auth_PutRequest"
+              },
+              "example": {
+                "oPwd": "AgentAdmin",
+                "nPwd": "Admin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseBaseModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseBaseModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseBaseModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/siderbar": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "取得登入者對應的權限表 (同時也對應左方功能列表)",
+        "operationId": "siderbar",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SiderbarItem"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SiderbarItem"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SiderbarItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/check": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "測試使用者 Token 是否仍有效",
+        "operationId": "check",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Bet/Search": {
+      "post": {
+        "tags": [
+          "Bet"
+        ],
+        "operationId": "Search",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetSearchRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-03T17:29:45.9051582+08:00",
+                "endDatetime": "2020-09-03T17:29:45.9051705+08:00",
+                "systemCode": null,
+                "webId": null,
+                "memberAccount": null,
+                "gameType": "Bacc",
+                "groupMode": 0,
+                "id": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "GameName"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetSearchRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-03T17:29:45.9051582+08:00",
+                "endDatetime": "2020-09-03T17:29:45.9051705+08:00",
+                "systemCode": null,
+                "webId": null,
+                "memberAccount": null,
+                "gameType": "Bacc",
+                "groupMode": 0,
+                "id": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "GameName"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetSearchRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-03T17:29:45.9051582+08:00",
+                "endDatetime": "2020-09-03T17:29:45.9051705+08:00",
+                "systemCode": null,
+                "webId": null,
+                "memberAccount": null,
+                "gameType": "Bacc",
+                "groupMode": 0,
+                "id": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "GameName"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetSearchRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-03T17:29:45.9051582+08:00",
+                "endDatetime": "2020-09-03T17:29:45.9051705+08:00",
+                "systemCode": null,
+                "webId": null,
+                "memberAccount": null,
+                "gameType": "Bacc",
+                "groupMode": 0,
+                "id": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "GameName"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Bet/Search/Game": {
+      "post": {
+        "tags": [
+          "Bet"
+        ],
+        "operationId": "Game",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetSearchRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-03T17:29:45.9068481+08:00",
+                "endDatetime": "2020-09-03T17:29:45.9068555+08:00",
+                "systemCode": null,
+                "webId": null,
+                "memberAccount": null,
+                "gameType": "Bacc",
+                "groupMode": 0,
+                "id": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "GameName"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetSearchRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-03T17:29:45.9068481+08:00",
+                "endDatetime": "2020-09-03T17:29:45.9068555+08:00",
+                "systemCode": null,
+                "webId": null,
+                "memberAccount": null,
+                "gameType": "Bacc",
+                "groupMode": 0,
+                "id": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "GameName"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetSearchRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-03T17:29:45.9068481+08:00",
+                "endDatetime": "2020-09-03T17:29:45.9068555+08:00",
+                "systemCode": null,
+                "webId": null,
+                "memberAccount": null,
+                "gameType": "Bacc",
+                "groupMode": 0,
+                "id": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "GameName"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetSearchRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-03T17:29:45.9068481+08:00",
+                "endDatetime": "2020-09-03T17:29:45.9068555+08:00",
+                "systemCode": null,
+                "webId": null,
+                "memberAccount": null,
+                "gameType": "Bacc",
+                "groupMode": 0,
+                "id": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "GameName"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Bet/SearchDashboard": {
+      "post": {
+        "tags": [
+          "Bet"
+        ],
+        "operationId": "SearchDashboard",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDashboardRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDashboardRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDashboardRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDashboardRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/External/Bet/Search": {
+      "post": {
+        "tags": [
+          "Bet"
+        ],
+        "operationId": "Search2",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "request": {
+                    "type": "string",
+                    "nullable": true
+                  }
+                }
+              },
+              "encoding": {
+                "request": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/BetAreaMapSet": {
+      "get": {
+        "tags": [
+          "BetAreaMapSet"
+        ],
+        "operationId": "BetAreaMapSet",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Features": {
+      "get": {
+        "tags": [
+          "Features"
+        ],
+        "operationId": "Features",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Features/{id}": {
+      "get": {
+        "tags": [
+          "Features"
+        ],
+        "operationId": "Features2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/FlagMap": {
+      "get": {
+        "tags": [
+          "FlagMap"
+        ],
+        "operationId": "FlagMap",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/FlagMap/search": {
+      "post": {
+        "tags": [
+          "FlagMap"
+        ],
+        "summary": "提供 JQuery Datatable 的 Datasource",
+        "operationId": "search",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchFlagMapRequest"
+              },
+              "example": {
+                "flagType": "",
+                "name": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchFlagMapRequest"
+              },
+              "example": {
+                "flagType": "",
+                "name": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchFlagMapRequest"
+              },
+              "example": {
+                "flagType": "",
+                "name": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchFlagMapRequest"
+              },
+              "example": {
+                "flagType": "",
+                "name": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/GameResult/deskInfo": {
+      "get": {
+        "tags": [
+          "GameResult"
+        ],
+        "summary": "取得「開牌記錄」頁面的預設資訊",
+        "operationId": "deskInfo",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GameDeskItem"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GameDeskItem"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GameDeskItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/GameResult/bacc/search": {
+      "post": {
+        "tags": [
+          "GameResult"
+        ],
+        "summary": "支援使用 ColumnName 的排序",
+        "operationId": "search2",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9333121+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9333212+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9333121+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9333212+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9333121+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9333212+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9333121+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9333212+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/GameResult/longHu/search": {
+      "post": {
+        "tags": [
+          "GameResult"
+        ],
+        "summary": "支援使用 ColumnName 的排序",
+        "operationId": "search3",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9349675+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9349736+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9349675+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9349736+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9349675+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9349736+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9349675+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9349736+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/GameResult/lunPan/search": {
+      "post": {
+        "tags": [
+          "GameResult"
+        ],
+        "summary": "支援使用 ColumnName 的排序",
+        "operationId": "search4",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9365992+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9366066+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9365992+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9366066+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9365992+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9366066+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9365992+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9366066+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/GameResult/shaiZi/search": {
+      "post": {
+        "tags": [
+          "GameResult"
+        ],
+        "summary": "支援使用 ColumnName 的排序",
+        "operationId": "search5",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9382231+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9382286+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9382231+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9382286+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9382231+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9382286+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9382231+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9382286+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/GameResult/fanTan/search": {
+      "post": {
+        "tags": [
+          "GameResult"
+        ],
+        "summary": "支援使用 ColumnName 的排序",
+        "operationId": "search6",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9400375+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9400442+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9400375+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9400442+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9400375+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9400442+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9400375+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9400442+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/GameResult/insuBacc/search": {
+      "post": {
+        "tags": [
+          "GameResult"
+        ],
+        "summary": "支援使用 ColumnName 的排序",
+        "operationId": "search7",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9415661+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9415717+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9415661+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9415717+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9415661+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9415717+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9415661+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9415717+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/GameResult/pokDeng/search": {
+      "post": {
+        "tags": [
+          "GameResult"
+        ],
+        "summary": "支援使用 ColumnName 的排序",
+        "operationId": "search8",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9430844+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9430906+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9430844+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9430906+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9430844+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9430906+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchGameResultRequest"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9430844+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9430906+08:00",
+                "serverId": "",
+                "run": "",
+                "active": "",
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "DateTime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Member/search": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "提供 JQuery Datatable 的 Datasource\r\n記得使用 H1N0Root 登入，才會看的到測試的會員資料",
+        "operationId": "search9",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchMemberRequest"
+              },
+              "example": {
+                "name": "",
+                "account": "",
+                "online": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchMemberRequest"
+              },
+              "example": {
+                "name": "",
+                "account": "",
+                "online": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchMemberRequest"
+              },
+              "example": {
+                "name": "",
+                "account": "",
+                "online": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchMemberRequest"
+              },
+              "example": {
+                "name": "",
+                "account": "",
+                "online": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/MemberOnline/Num": {
+      "get": {
+        "tags": [
+          "MemberOnline"
+        ],
+        "operationId": "Num",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/News/language/{language}": {
+      "get": {
+        "tags": [
+          "News"
+        ],
+        "operationId": "language",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Org": {
+      "get": {
+        "tags": [
+          "Org"
+        ],
+        "operationId": "Org",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SystemCode": {
+      "get": {
+        "tags": [
+          "SystemCode"
+        ],
+        "summary": "取得所有 SystemCode",
+        "operationId": "SystemCode",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SystemCode"
+        ],
+        "summary": "新增 SystemCode，需注意同一組織下不可重覆名字、代碼",
+        "operationId": "SystemCode2",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemCode_PostRequest"
+              },
+              "example": {
+                "id": "31370ab8-8c25-4804-92df-6adf844cbf43",
+                "code": "HISys01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "draw": 0,
+                "start": 0,
+                "length": 0,
+                "order": null
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemCode_PostRequest"
+              },
+              "example": {
+                "id": "31370ab8-8c25-4804-92df-6adf844cbf43",
+                "code": "HISys01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "draw": 0,
+                "start": 0,
+                "length": 0,
+                "order": null
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemCode_PostRequest"
+              },
+              "example": {
+                "id": "31370ab8-8c25-4804-92df-6adf844cbf43",
+                "code": "HISys01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "draw": 0,
+                "start": 0,
+                "length": 0,
+                "order": null
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemCode_PostRequest"
+              },
+              "example": {
+                "id": "31370ab8-8c25-4804-92df-6adf844cbf43",
+                "code": "HISys01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "draw": 0,
+                "start": 0,
+                "length": 0,
+                "order": null
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SystemCode"
+        ],
+        "summary": "更新 SystemCode，需注意同一組織下不可重覆名字、代碼\r\n☆更新時，系統只會更新 Code、Name、Status 三個欄位，OrganizationId 會自動忽略",
+        "operationId": "SystemCode3",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemCode_PostRequest"
+              },
+              "example": {
+                "id": "123c3116-1032-4f53-9409-9ab718279c55",
+                "code": "HISys01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "draw": 0,
+                "start": 0,
+                "length": 0,
+                "order": null
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemCode_PostRequest"
+              },
+              "example": {
+                "id": "123c3116-1032-4f53-9409-9ab718279c55",
+                "code": "HISys01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "draw": 0,
+                "start": 0,
+                "length": 0,
+                "order": null
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemCode_PostRequest"
+              },
+              "example": {
+                "id": "123c3116-1032-4f53-9409-9ab718279c55",
+                "code": "HISys01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "draw": 0,
+                "start": 0,
+                "length": 0,
+                "order": null
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemCode_PostRequest"
+              },
+              "example": {
+                "id": "123c3116-1032-4f53-9409-9ab718279c55",
+                "code": "HISys01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "draw": 0,
+                "start": 0,
+                "length": 0,
+                "order": null
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SystemCode/{id}": {
+      "get": {
+        "tags": [
+          "SystemCode"
+        ],
+        "summary": "取得 SystemCode",
+        "operationId": "SystemCode4",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "",
+            "schema": {
+              "type": "string",
+              "description": "",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SystemCode"
+        ],
+        "summary": "刪除",
+        "operationId": "SystemCode5",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "",
+            "schema": {
+              "type": "string",
+              "description": "",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SystemCode/search": {
+      "post": {
+        "tags": [
+          "SystemCode"
+        ],
+        "summary": "提供 JQuery Datatable 的 Datasource",
+        "operationId": "search10",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchSystemCodeRequest"
+              },
+              "example": {
+                "code": "",
+                "name": "",
+                "status": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchSystemCodeRequest"
+              },
+              "example": {
+                "code": "",
+                "name": "",
+                "status": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchSystemCodeRequest"
+              },
+              "example": {
+                "code": "",
+                "name": "",
+                "status": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchSystemCodeRequest"
+              },
+              "example": {
+                "code": "",
+                "name": "",
+                "status": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/TransactionLog/search": {
+      "post": {
+        "tags": [
+          "TransactionLog"
+        ],
+        "operationId": "search11",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchTransactionLogRequst_Agent"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9794334+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9794462+08:00",
+                "systemCode": "",
+                "webId": "",
+                "memberAccount": "",
+                "type": -1,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 1,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchTransactionLogRequst_Agent"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9794334+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9794462+08:00",
+                "systemCode": "",
+                "webId": "",
+                "memberAccount": "",
+                "type": -1,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 1,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchTransactionLogRequst_Agent"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9794334+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9794462+08:00",
+                "systemCode": "",
+                "webId": "",
+                "memberAccount": "",
+                "type": -1,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 1,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchTransactionLogRequst_Agent"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9794334+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9794462+08:00",
+                "systemCode": "",
+                "webId": "",
+                "memberAccount": "",
+                "type": -1,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 1,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/External/TransactionLog/search/raw": {
+      "post": {
+        "tags": [
+          "TransactionLog"
+        ],
+        "operationId": "raw",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchTransactionLogRequst"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9889682+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9889773+08:00",
+                "company": "H1T007",
+                "systemCode": "H1T007Sys",
+                "webId": "H1T007W01",
+                "memberAccount": "H107Player1",
+                "type": -1,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 1,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchTransactionLogRequst"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9889682+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9889773+08:00",
+                "company": "H1T007",
+                "systemCode": "H1T007Sys",
+                "webId": "H1T007W01",
+                "memberAccount": "H107Player1",
+                "type": -1,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 1,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchTransactionLogRequst"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9889682+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9889773+08:00",
+                "company": "H1T007",
+                "systemCode": "H1T007Sys",
+                "webId": "H1T007W01",
+                "memberAccount": "H107Player1",
+                "type": -1,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 1,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchTransactionLogRequst"
+              },
+              "example": {
+                "startDatetime": "2020-08-27T17:29:45.9889682+08:00",
+                "endDatetime": "2020-09-04T17:29:45.9889773+08:00",
+                "company": "H1T007",
+                "systemCode": "H1T007Sys",
+                "webId": "H1T007W01",
+                "memberAccount": "H107Player1",
+                "type": -1,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 1,
+                    "dir": "desc",
+                    "columnName": "CreateDatetime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/External/TransactionLog/search": {
+      "post": {
+        "tags": [
+          "TransactionLog"
+        ],
+        "operationId": "search12",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "request": {
+                    "type": "string",
+                    "nullable": true
+                  }
+                }
+              },
+              "encoding": {
+                "request": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/WebId": {
+      "get": {
+        "tags": [
+          "WebId"
+        ],
+        "summary": "取得 WebId",
+        "operationId": "WebId",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WebId"
+        ],
+        "summary": "新增 WebId，需注意同一組織下不可重覆\r\n☆輸入值請參考 GetEntity",
+        "operationId": "WebId2",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebId_PostRequest"
+              },
+              "example": {
+                "id": "e727cfb6-b121-4ea7-ad10-e40b95a80d0c",
+                "code": "H1Web01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "systemCodeId": "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebId_PostRequest"
+              },
+              "example": {
+                "id": "e727cfb6-b121-4ea7-ad10-e40b95a80d0c",
+                "code": "H1Web01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "systemCodeId": "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebId_PostRequest"
+              },
+              "example": {
+                "id": "e727cfb6-b121-4ea7-ad10-e40b95a80d0c",
+                "code": "H1Web01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "systemCodeId": "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebId_PostRequest"
+              },
+              "example": {
+                "id": "e727cfb6-b121-4ea7-ad10-e40b95a80d0c",
+                "code": "H1Web01",
+                "name": "abc123測試名稱",
+                "status": true,
+                "systemCodeId": "af6fcc92-eea6-4237-9e27-978709dcd7e8"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "WebId"
+        ],
+        "summary": "修改 WebId，需注意同一組織下不可重覆\r\n ☆輸入值請參考 GetEntity",
+        "operationId": "WebId3",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebIdSet"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebIdSet"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebIdSet"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebIdSet"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/WebId/{id}": {
+      "get": {
+        "tags": [
+          "WebId"
+        ],
+        "summary": "取得 WebId",
+        "operationId": "WebId4",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "WebId"
+        ],
+        "summary": "刪除",
+        "operationId": "WebId5",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/WebId/search": {
+      "post": {
+        "tags": [
+          "WebId"
+        ],
+        "summary": "提供 JQuery Datatable 的 Datasource",
+        "operationId": "search13",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebIdCodeSearchRequest"
+              },
+              "example": {
+                "code": "",
+                "name": "",
+                "status": null,
+                "sys": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebIdCodeSearchRequest"
+              },
+              "example": {
+                "code": "",
+                "name": "",
+                "status": null,
+                "sys": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebIdCodeSearchRequest"
+              },
+              "example": {
+                "code": "",
+                "name": "",
+                "status": null,
+                "sys": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebIdCodeSearchRequest"
+              },
+              "example": {
+                "code": "",
+                "name": "",
+                "status": null,
+                "sys": null,
+                "draw": 1,
+                "start": 0,
+                "length": 10,
+                "order": [
+                  {
+                    "column": 0,
+                    "dir": "desc",
+                    "columnName": "Type"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Organization_Request": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "Agent_PostRequest": {
+        "type": "object",
+        "description": "新增 Agent 的 Request 物件",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "帳號 key：\r\n可不給；若有給值，會判斷是否與 db 重覆；若沒給值，會自動產生的一組並回傳",
+            "format": "uuid"
+          },
+          "account": {
+            "type": "string",
+            "description": "帳號名稱：\r\n登入時用來識別使用者。\r\n不可為空白，必須是5~32位的英文、數字、與 \"_\" 所組成，且帳號為唯一值，若重覆，系統會送出失數訊息。",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "description": "密碼：\r\n新增時不可為空白，更新時若為空白表示不修改密碼；必須是5~32位的英文、數字、與 \"_\" 所組成",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "名字：\r\n不可為空白，必須是2~10位中文、英文、數字、與 \"_\" 所組成",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean",
+            "description": "啟用狀態：\r\ntrue:啟用、false:停用\r\n種子帳號無法停用自己"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email：\r\n必須符合 Email 格式",
+            "nullable": true
+          },
+          "parentId": {
+            "type": "string",
+            "description": "父帳號",
+            "format": "uuid"
+          },
+          "authMapId": {
+            "type": "array",
+            "description": "權限：\r\n此 Agent 所擁有的權限，需注意如果改變上層的權限，下層也會跟著改\r\n若限縮權限時，下層會跟著被限縮，但增加權限時，不會自動增加",
+            "nullable": true,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "organization": {
+            "$ref": "#/components/schemas/Organization_Request"
+          },
+          "systemCode": {
+            "type": "array",
+            "description": "如果這個欄位有值且 OrganizationId 為 null，系統會自動把這個欄位的範圍與 WebId 做加總",
+            "nullable": true,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "webId": {
+            "type": "array",
+            "description": "如果這個欄位有值且 OrganizationId 為 null，系統會自動把這個欄位的範圍與 SystemCode 做加總",
+            "nullable": true,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "Agent_PutRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "帳號 key：\r\n可不給；若有給值，會判斷是否與 db 重覆；若沒給值，會自動產生的一組並回傳",
+            "format": "uuid"
+          },
+          "account": {
+            "type": "string",
+            "description": "帳號名稱：\r\n登入時用來識別使用者。\r\n不可為空白，必須是5~32位的英文、數字、與 \"_\" 所組成，且帳號為唯一值，若重覆，系統會送出失數訊息。",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "description": "密碼：\r\n新增時不可為空白，更新時若為空白表示不修改密碼；必須是5~32位的英文、數字、與 \"_\" 所組成",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "名字：\r\n不可為空白，必須是2~10位中文、英文、數字、與 \"_\" 所組成",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean",
+            "description": "啟用狀態：\r\ntrue:啟用、false:停用\r\n種子帳號無法停用自己"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email：\r\n必須符合 Email 格式",
+            "nullable": true
+          },
+          "parentId": {
+            "type": "string",
+            "description": "父帳號",
+            "format": "uuid"
+          },
+          "authMapId": {
+            "type": "array",
+            "description": "權限：\r\n此 Agent 所擁有的權限，需注意如果改變上層的權限，下層也會跟著改\r\n若限縮權限時，下層會跟著被限縮，但增加權限時，不會自動增加",
+            "nullable": true,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "organization": {
+            "$ref": "#/components/schemas/Organization_Request"
+          },
+          "systemCode": {
+            "type": "array",
+            "description": "如果這個欄位有值且 OrganizationId 為 null，系統會自動把這個欄位的範圍與 WebId 做加總",
+            "nullable": true,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "webId": {
+            "type": "array",
+            "description": "如果這個欄位有值且 OrganizationId 為 null，系統會自動把這個欄位的範圍與 SystemCode 做加總",
+            "nullable": true,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "Auth_PostRequest": {
+        "type": "object",
+        "description": "Auth_PostRequest 物件",
+        "additionalProperties": false,
+        "properties": {
+          "u": {
+            "type": "string",
+            "description": "帳號",
+            "nullable": true
+          },
+          "p": {
+            "type": "string",
+            "description": "密碼",
+            "nullable": true
+          },
+          "c": {
+            "type": "string",
+            "description": "驗證碼",
+            "nullable": true
+          }
+        }
+      },
+      "ResponseErrCode": {
+        "type": "integer",
+        "description": "狀態碼, 0:正常, -1:系統錯誤, -2:檢核錯誤",
+        "format": "int32",
+        "enum": [
+          0,
+          -2,
+          -1
+        ]
+      },
+      "StringResponseBaseModel": {
+        "type": "object",
+        "description": "通用回傳格式",
+        "additionalProperties": false,
+        "properties": {
+          "errCode": {
+            "$ref": "#/components/schemas/ResponseErrCode"
+          },
+          "errMsg": {
+            "type": "string",
+            "description": "若狀態碼為 -2 時，此欄位自帶客製錯誤訊息",
+            "nullable": true
+          },
+          "data": {
+            "type": "string",
+            "description": "回傳物件",
+            "nullable": true
+          }
+        }
+      },
+      "Auth_PutRequest": {
+        "type": "object",
+        "description": "修改密碼",
+        "additionalProperties": false,
+        "properties": {
+          "oPwd": {
+            "type": "string",
+            "description": "舊密碼",
+            "nullable": true
+          },
+          "nPwd": {
+            "type": "string",
+            "description": "新密碼",
+            "nullable": true
+          }
+        }
+      },
+      "AuthMapView": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "authCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seq": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "authName": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "SiderbarItem": {
+        "type": "object",
+        "description": "提供前端權限總表與相關設定",
+        "additionalProperties": false,
+        "properties": {
+          "hideInBackend": {
+            "type": "boolean",
+            "description": "是否隱藏：\r\ntrue:隱藏；false:不隱藏"
+          },
+          "featuresId": {
+            "type": "string",
+            "description": "功能 ID：\r\n請參考 [Get]Features",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "description": "功能代碼：\r\nkey 都是 Guid 看著很累，所以提供一個欄位，讓人看的懂…",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "功能名稱：\r\n中文，若有多語系需求時，請自行以 code 為代碼進行轉換，當然如果你想要用 FeaturesId 我也沒攔著你…",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "description": "路徑：\r\nURL 路徑",
+            "nullable": true
+          },
+          "featuresType": {
+            "type": "integer",
+            "description": "功能類別：\r\n0=>功能(function), 1=>資料夾(Folder), 2=>隱藏(AlwaysHide)",
+            "format": "int32"
+          },
+          "icon": {
+            "type": "string",
+            "description": "功能圖標：\r\n功能圖標的 css class",
+            "nullable": true
+          },
+          "parentId": {
+            "type": "string",
+            "description": "父類別 Id",
+            "format": "uuid",
+            "nullable": true
+          },
+          "sort": {
+            "type": "integer",
+            "description": "排序：\r\n請由小排到大",
+            "format": "int32"
+          },
+          "authMaps": {
+            "type": "array",
+            "description": "此功能所擁有的授權，或是此登入者所擁有的授權",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AuthMapView"
+            }
+          },
+          "subMenu": {
+            "type": "array",
+            "description": "子類別",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SiderbarItem"
+            }
+          }
+        }
+      },
+      "JDataTableOrderItem": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "column": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dir": {
+            "type": "string",
+            "nullable": true
+          },
+          "columnName": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "BetSearchRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "startDatetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDatetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "systemCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "webId": {
+            "type": "string",
+            "nullable": true
+          },
+          "memberAccount": {
+            "type": "string",
+            "nullable": true
+          },
+          "gameType": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupMode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "draw": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/JDataTableOrderItem"
+            }
+          }
+        }
+      },
+      "SearchDashboardRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "startDatetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDatetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "groupMode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "draw": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "SearchFlagMapRequest": {
+        "type": "object",
+        "description": "JQuery Datatable SearchRequest\r\n以此物件遮斷前端搜尋條件與 QueryBuilder，不然讓前端直接操作 QueryBuilder 太可怕",
+        "additionalProperties": false,
+        "properties": {
+          "flagType": {
+            "type": "string",
+            "description": "FlagType 模糊搜尋",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Name 模糊搜尋",
+            "nullable": true
+          },
+          "draw": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/JDataTableOrderItem"
+            }
+          }
+        }
+      },
+      "GameDeskItem": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "serverId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "gameNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "historyVideoUrl1": {
+            "type": "string",
+            "nullable": true
+          },
+          "historyVideoUrl2": {
+            "type": "string",
+            "nullable": true
+          },
+          "historyVideoUrl3": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "SearchGameResultRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "startDatetime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endDatetime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "serverId": {
+            "type": "string",
+            "nullable": true
+          },
+          "run": {
+            "type": "string",
+            "nullable": true
+          },
+          "active": {
+            "type": "string",
+            "nullable": true
+          },
+          "draw": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/JDataTableOrderItem"
+            }
+          }
+        }
+      },
+      "SearchMemberRequest": {
+        "type": "object",
+        "description": "JQuery Datatable SearchRequest\r\n以此物件遮斷前端搜尋條件與 QueryBuilder，不然讓前端直接操作 QueryBuilder 太可怕",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "會員姓名",
+            "nullable": true
+          },
+          "account": {
+            "type": "string",
+            "description": "會員帳號",
+            "nullable": true
+          },
+          "online": {
+            "type": "boolean",
+            "description": "是否在線",
+            "nullable": true
+          },
+          "draw": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/JDataTableOrderItem"
+            }
+          }
+        }
+      },
+      "SystemCode_PostRequest": {
+        "type": "object",
+        "description": "",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id, 若為空時，系統自動建立",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "description": "代碼，同一組織底下不可重覆",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "名稱，同一組織底下不可重覆",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean",
+            "description": "狀態"
+          },
+          "draw": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/JDataTableOrderItem"
+            }
+          }
+        }
+      },
+      "SearchSystemCodeRequest": {
+        "type": "object",
+        "description": "JQuery Datatable SearchRequest\r\n以此物件遮斷前端搜尋條件與 QueryBuilder，不然讓前端直接操作 QueryBuilder 太可怕",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Code 模糊搜尋",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Name 模糊搜尋",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean",
+            "description": "狀態",
+            "nullable": true
+          },
+          "draw": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/JDataTableOrderItem"
+            }
+          }
+        }
+      },
+      "AgentRequestType": {
+        "type": "integer",
+        "format": "int32",
+        "enum": [
+          0,
+          1,
+          2,
+          -1
+        ]
+      },
+      "SearchTransactionLogRequst_Agent": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "startDatetime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endDatetime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "systemCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "webId": {
+            "type": "string",
+            "nullable": true
+          },
+          "memberAccount": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/AgentRequestType"
+          },
+          "draw": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/JDataTableOrderItem"
+            }
+          }
+        }
+      },
+      "RequestType": {
+        "type": "integer",
+        "format": "int32",
+        "enum": [
+          0,
+          1,
+          2,
+          -1
+        ]
+      },
+      "SearchTransactionLogRequst": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "startDatetime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endDatetime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "company": {
+            "type": "string",
+            "nullable": true
+          },
+          "systemCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "webId": {
+            "type": "string",
+            "nullable": true
+          },
+          "memberAccount": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/RequestType"
+          },
+          "draw": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/JDataTableOrderItem"
+            }
+          }
+        }
+      },
+      "WebId_PostRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id, 若為空時，系統自動建立",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "description": "代碼，同一組織底下不可重覆",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "名稱，同一組織底下不可重覆",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean",
+            "description": "狀態"
+          },
+          "systemCodeId": {
+            "type": "string",
+            "description": "SystemCode Id",
+            "format": "uuid"
+          }
+        }
+      },
+      "LoginHistorySet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ip": {
+            "type": "string",
+            "nullable": true
+          },
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "metadata": {
+            "type": "string",
+            "nullable": true
+          },
+          "createDatetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "managerId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "agentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "agent": {
+            "$ref": "#/components/schemas/AgentSet"
+          },
+          "manager": {
+            "$ref": "#/components/schemas/ManagerSet"
+          }
+        }
+      },
+      "AgentRole": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "agentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "roleId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "agent": {
+            "$ref": "#/components/schemas/AgentSet"
+          },
+          "role": {
+            "$ref": "#/components/schemas/RoleSet"
+          }
+        }
+      },
+      "FeaturesSet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "uri": {
+            "type": "string",
+            "nullable": true
+          },
+          "featuresType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roleType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seq": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "parent": {
+            "$ref": "#/components/schemas/FeaturesSet"
+          },
+          "authMapFeatures": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AuthMapFeatures"
+            }
+          },
+          "inverseParent": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/FeaturesSet"
+            }
+          }
+        }
+      },
+      "AuthMapFeatures": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "authMapId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "featuresId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "authMap": {
+            "$ref": "#/components/schemas/AuthMapSet"
+          },
+          "features": {
+            "$ref": "#/components/schemas/FeaturesSet"
+          }
+        }
+      },
+      "AuthMapSet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "authCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seq": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "authMapFeatures": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AuthMapFeatures"
+            }
+          },
+          "roleAuthMap": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/RoleAuthMap"
+            }
+          }
+        }
+      },
+      "RoleAuthMap": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "roleId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "authMapId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "authMap": {
+            "$ref": "#/components/schemas/AuthMapSet"
+          },
+          "role": {
+            "$ref": "#/components/schemas/RoleSet"
+          }
+        }
+      },
+      "RoleSet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "roleType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seq": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "agentRole": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentRole"
+            }
+          },
+          "managerRole": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ManagerRole"
+            }
+          },
+          "roleAuthMap": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/RoleAuthMap"
+            }
+          }
+        }
+      },
+      "ManagerRole": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "managerId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "roleId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "manager": {
+            "$ref": "#/components/schemas/ManagerSet"
+          },
+          "role": {
+            "$ref": "#/components/schemas/RoleSet"
+          }
+        }
+      },
+      "ManagerSet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "account": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "createDatetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updateDatetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isDelete": {
+            "type": "boolean"
+          },
+          "qrCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "createManagerId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "updateManagerId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "createManager": {
+            "$ref": "#/components/schemas/ManagerSet"
+          },
+          "updateManager": {
+            "$ref": "#/components/schemas/ManagerSet"
+          },
+          "agentSetCreateManager": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentSet"
+            }
+          },
+          "agentSetUpdateManager": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentSet"
+            }
+          },
+          "inverseCreateManager": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ManagerSet"
+            }
+          },
+          "inverseUpdateManager": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ManagerSet"
+            }
+          },
+          "loginHistorySet": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/LoginHistorySet"
+            }
+          },
+          "managerRole": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ManagerRole"
+            }
+          }
+        }
+      },
+      "AgentSystemCode": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "agentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "systemCodeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "agent": {
+            "$ref": "#/components/schemas/AgentSet"
+          },
+          "systemCode": {
+            "$ref": "#/components/schemas/SystemCodeSet"
+          }
+        }
+      },
+      "AgentWebId": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "agentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "webIdId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "agent": {
+            "$ref": "#/components/schemas/AgentSet"
+          },
+          "webId": {
+            "$ref": "#/components/schemas/WebIdSet"
+          }
+        }
+      },
+      "AgentSet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "account": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "createDatetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updateDatetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isDelete": {
+            "type": "boolean"
+          },
+          "createManagerId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "updateManagerId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "updateAgentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "createAgentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "parentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "organizationId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "createAgent": {
+            "$ref": "#/components/schemas/AgentSet"
+          },
+          "createManager": {
+            "$ref": "#/components/schemas/ManagerSet"
+          },
+          "organization": {
+            "$ref": "#/components/schemas/OrganizationSet"
+          },
+          "parent": {
+            "$ref": "#/components/schemas/AgentSet"
+          },
+          "updateAgent": {
+            "$ref": "#/components/schemas/AgentSet"
+          },
+          "updateManager": {
+            "$ref": "#/components/schemas/ManagerSet"
+          },
+          "agentRole": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentRole"
+            }
+          },
+          "agentSystemCode": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentSystemCode"
+            }
+          },
+          "agentWebId": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentWebId"
+            }
+          },
+          "inverseCreateAgent": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentSet"
+            }
+          },
+          "inverseParent": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentSet"
+            }
+          },
+          "inverseUpdateAgent": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentSet"
+            }
+          },
+          "loginHistorySet": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/LoginHistorySet"
+            }
+          }
+        }
+      },
+      "OrganizationSet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "clientSecret": {
+            "type": "string",
+            "nullable": true
+          },
+          "desKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "desIv": {
+            "type": "string",
+            "nullable": true
+          },
+          "gameUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          },
+          "agentSet": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentSet"
+            }
+          },
+          "systemCodeSet": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SystemCodeSet"
+            }
+          }
+        }
+      },
+      "SystemCodeSet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "isDelete": {
+            "type": "boolean"
+          },
+          "organizationId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "organization": {
+            "$ref": "#/components/schemas/OrganizationSet"
+          },
+          "agentSystemCode": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentSystemCode"
+            }
+          },
+          "webIdSet": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/WebIdSet"
+            }
+          }
+        }
+      },
+      "WebIdSet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "isDelete": {
+            "type": "boolean"
+          },
+          "systemCodeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "systemCode": {
+            "$ref": "#/components/schemas/SystemCodeSet"
+          },
+          "agentWebId": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AgentWebId"
+            }
+          }
+        }
+      },
+      "WebIdCodeSearchRequest": {
+        "type": "object",
+        "description": "JQuery Datatable SearchRequest\r\n以此物件遮斷前端搜尋條件與 QueryBuilder，不然讓前端直接操作 QueryBuilder 太可怕",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Code 模糊搜尋",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Name 模糊搜尋",
+            "nullable": true
+          },
+          "status": {
+            "type": "boolean",
+            "description": "狀態",
+            "nullable": true
+          },
+          "sys": {
+            "type": "string",
+            "description": "SystemCode id",
+            "format": "uuid",
+            "nullable": true
+          },
+          "draw": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/JDataTableOrderItem"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "管理登入與登入者的授權"
+    },
+    {
+      "name": "SystemCode",
+      "description": ""
+    }
+  ]
+}
